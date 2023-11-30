@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./plans.css";
 import db from "../../firebase";
-//import { prices } from "../../prices";
 import { prices } from "../../store";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSelector } from "react-redux";
@@ -68,16 +67,10 @@ const Plans = () => {
 			const { error, sessionId } = snap.data();
 
 			if (error) {
-				// Show an error to your customer and
-				// Inspect your cloud function logs in the firebase console
-
-				alert(`An error occurred ${error.message}`);
+				alert(`Ocurrio un error ${error.message}`);
 			}
 
 			if (sessionId) {
-				// We have a session, lets redirect to Checkout
-				// Init Stripe
-
 				const stripe = await loadStripe("put_ur_publishable_key_from_stripe");
 				stripe.redirectToCheckout({ sessionId });
 			}
@@ -98,17 +91,12 @@ const Plans = () => {
 				</p>
 			)}
 			{Object.entries(products).map(([productId, productData]) => {
-				// TODO
-				// To check which package the use has subscribed to
 				const isCurrentPackage = productData.name
 					?.toLowerCase()
 					.includes(subscription?.role);
 				return (
 					<div
 						key={productId}
-						// className={`${
-						// 	isCurrentPackage && "plans__plan--disabled"
-						// } "plans__plan"`}
 						className="plans__plan"
 					>
 						<div className="plans__info">
