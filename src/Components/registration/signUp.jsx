@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./signUp.css";
-//import { auth } from "../../firebase";
 
 const SignUp = ({ email }) => {
 	const emailRef = useRef("");
@@ -36,20 +35,7 @@ const SignUp = ({ email }) => {
 	// To login to the app
 	const signIn = (e) => {
 		e.preventDefault();
-
-		/*auth
-			.signInWithEmailAndPassword(
-				emailRef.current.value,
-				passwordRef.current.value
-			)
-			.then((authUser) => {
-				console.log(authUser);
-			})
-			.catch((error) => {
-				setErrorMessage(error.message);
-			});*/
-
-			const user = true;
+		const user = true;
 	};
 	return (
 		<div className="signup">
