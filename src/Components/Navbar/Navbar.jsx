@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-//import { useNavigate } from "react";
 
 function Navbar() {
   const [show, handleShow] = useState(false);
-  //const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
