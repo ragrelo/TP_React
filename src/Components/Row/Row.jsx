@@ -104,7 +104,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
           <div id='not-found'>
             {showTrailerNotFound && (
               <h3>
-                Trailer not found
+                Trailer no encontrado
               </h3>
             )}
           </div>
